@@ -1,0 +1,333 @@
+body {
+    max-width: 2700px;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    font-family: courier, monospace;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    overflow-y: scroll;
+}
+
+/* 
+   General 
+*/
+
+a {
+    color: #1bc;
+    text-decoration: none;
+}
+
+a.navbar-brand {
+    color: wheat;
+}
+
+a.Underline {
+    cursor: pointer;
+}
+
+div.Articles {
+    height: 300px;
+    overflow-y: scroll;
+}
+
+div.Blue {
+    text-align: center;
+}
+
+.GithubGists {
+    width: 100%;
+}
+
+div.articles {
+    width: 100%;
+}
+
+input {
+    background-color: #000;
+    border: 1px solid #fff;
+    color: green;
+    width: 100%;
+    height: 27px;
+}
+
+li {
+    list-style: none;
+}
+
+li.TopNav {
+    display: inline;
+    float: left;
+}
+
+li > a {
+    display: block;
+    padding: 9px;
+}
+
+video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+}
+
+time {
+    font-size: .66rem;
+}
+
+/* flex - general */
+
+div#FlexArea {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+a.nav-link {
+    flex: 50%;
+}
+
+section.ConsoleFlexArea {
+    flex: 33%;
+    text-align: center;
+}
+
+ul {
+    list-style-type: square;
+}
+
+/* 
+   Edit the command wall 
+*/
+
+table.table {
+    display: block;
+    width: 50%;
+}
+
+/* 
+   Home 
+*/
+
+img.HomeReduced {
+    border: 1px solid #aaa;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+u.Index {
+    border-bottom: 1px solid #aaa;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* 
+   Projects 
+*/
+
+img.ProjectsReduced {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+/* 
+   Resume 
+*/
+
+iframe#Resume {
+    height: 1800px;
+    width: 100%;
+}
+
+iframe#Transcript {
+    height: 900px;
+    width: 100%;
+}
+
+/*
+
+    Screen processing.
+
+
+*/
+
+/* 3000 */
+@media screen and (max-width: 3000px) {
+    body {
+        max-width: 2700px;
+    }
+
+    input {
+        max-width: 100%;
+    }
+
+    section.ConsoleFlexArea {
+        flex: 33%;
+    }
+
+    video {
+        width: 450px;
+    }
+}
+
+/* 2700 */
+@media screen and (max-width: 2700px) {
+    body {
+        max-width: 2400px;
+    }
+
+    input {
+        max-width: 100%;
+    }
+
+    section.ConsoleFlexArea {
+        flex: 33%;
+    }
+
+    video {
+        width: 400px;
+    }
+}
+
+/* 2400 */
+@media screen and (max-width: 2400px) {
+    body {
+        max-width: 2100px;
+    }
+
+    input {
+        max-width: 100%;
+    }
+
+    section.ConsoleFlexArea {
+        flex: 33%;
+    }
+
+    video {
+        width: 350px;
+    }
+}
+
+/* 2100 */
+@media screen and (max-width: 2100px) {
+    body {
+        max-width: 1800px;
+    }
+
+    input {
+        max-width: 100%;
+    }
+
+    section.ConsoleFlexArea {
+        flex: 33%;
+    }
+
+    video {
+        width: 300px;
+    }
+}
+
+/* 1800 */
+@media screen and (max-width: 1800px) {
+    body {
+        max-width: 1500px;
+    }
+
+    input {
+        max-width: 100%;
+    }
+
+    section.ConsoleFlexArea {
+        flex: 33%;
+    }
+
+    video {
+        width: 250px;
+    }
+}
+
+/* 1500 */
+@media screen and (max-width: 1500px) {
+    body {
+        max-width: 1200px;
+    }
+
+    input {
+        max-width: 100%;
+    }
+
+    section.ConsoleFlexArea {
+        flex: 33%;
+    }
+
+    video {
+        width: 200px;
+    }
+}
+
+/* 1200 */
+@media screen and (max-width: 1200px) {
+    body {
+        max-width: 900px;
+    }
+
+    input {
+        max-width: 100%;
+    }
+
+    section.ConsoleFlexArea {
+        flex: 33%;
+    }
+
+    video {
+        width: 150px;
+    }
+
+    div.FlexResume {
+        flex-wrap: wrap;
+    }
+}
+
+/* 900 */
+@media screen and (max-width: 900px) {
+    body {
+        max-width: 600px;
+    }
+
+    input {
+        max-width: 100%;
+    }
+
+    section.ConsoleFlexArea {
+        flex: 50%;
+    }
+
+    video {
+        width: 100px;
+    }
+}
+
+/* 600 */
+@media screen and (max-width: 600px) {
+    body {
+        max-width: 300px;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    section.ConsoleFlexArea {
+        flex: 50%;
+    }
+
+    video {
+        width: 50px;
+    }
+}

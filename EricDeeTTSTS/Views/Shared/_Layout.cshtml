@@ -1,0 +1,87 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/boot.css" runat="server" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TTSTS</a>
+
+            <ul class="TopNav">
+                <li class="TopNav">
+                    <a href="https://twitter.com/AtolMaker" target="_blank">Bot status</a>
+                </li>
+                <li class="TopNav">
+                    <a asp-area="" asp-controller="StringCommand" asp-action="Index">Command wall</a>
+                </li>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <li class="TopNav">
+                        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+                    </li>
+                }
+                <li class="TopNav">
+                    <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <li class="TopNav">
+                        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                            <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                        </form>
+                    </li>
+                }
+                else
+                {
+                    <li class="TopNav">
+                        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                    </li>
+                }
+                <li class="TopNav">
+                    <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </li>
+                @if (!SignInManager.IsSignedIn(User))
+                {
+                    <li class="TopNav">
+                        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                    </li>
+                }
+
+                <li class="TopNav">
+                    <a href="~/HTML/Roadmap/RoadmapLander.html" style="color:#fff">Roadmap</a>
+                </li>
+
+                <li class="TopNav">
+                    <a asp-area="" asp-controller="StringCommand" asp-action="DisplaySearchForm">Search</a>
+                </li>
+            </ul>
+            <!-- <partial name="_LoginPartial" /> Left for posterity-->
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <br />
+        <div class="container">
+            &copy; 2021 - EricDeeTTSTS - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/Interpreter.js" asp-append-version="true"></script>
+    <script src="~/js/CommandLine.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
